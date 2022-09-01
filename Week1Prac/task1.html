@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--External Styling-->
+    <link rel="stylesheet" href="./task2.css" />
+    <script src="./task3.js"></script>
+    <style>
+      /*internal styling */
+      body {
+        background-color: bisque;
+        margin: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is heading 1</h1>
+
+    <!--inline styling-->
+    <p style="color: blue">This is a paragraph tag</p>
+    <img src="webImage.jpeg" alt="IMAGE" height="300px" width="300px" />
+    <br />
+    <p>And I have created below form to submit details of a person</p>
+    <form>
+      <label for="fName">First Name:</label>
+      <input type="text" id="fName" /><br />
+      <label for="mName">Middle Name:</label>
+      <input type="text" id="mName" /><br />
+      <label for="lName">Last Name:</label>
+      <input type="text" id="lName" /><br />
+      <button>Submit</button>
+    </form>
+    <br /><br />
+    <button onclick="showDate()">Show Date & Time</button>
+    <p id="date"></p>
+  </body>
+</html>
