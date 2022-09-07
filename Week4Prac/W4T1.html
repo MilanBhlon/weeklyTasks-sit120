@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <!-- <div id="app1">
+      {{message}}
+      <br />
+      <span v-bind:title="message">Hover your mouse</span>
+      <div>
+        <h1 v-if="check">Only if true will be shown</h1>
+      </div>
+      <div>
+        <ol>
+          <li v-for="item in todos">{{item.text}}</li>
+        </ol>
+      </div>
+      <new-div v-for="item in todos" v-bind:todo="item"></new-div>
+    </div>
+    <script src="W4T1.js"></script> -->
+    <div id="app">
+      <h1>My first Vue App!</h1>
+      {{message}}
+    </div>
+    <br />
+    <div id="app2">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound
+        title!
+      </span>
+    </div>
+    <br />
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
+      <span v-else>The value is false</span><br />
+      <span v-show="seen">Hello!</span>
+    </div>
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">{{todo.text}}</li>
+      </ol>
+    </div>
+
+    <script src="W4T1.js"></script>
+  </body>
+</html>

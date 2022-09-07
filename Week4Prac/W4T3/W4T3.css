@@ -1,0 +1,31 @@
+.flex-container {
+    display: flex;
+    background-color: royalblue;
+}
+.flex-container > div {
+    padding: 20px;
+    background-color: red;
+    margin: 10px;
+    color:white;
+    font-size: 30px;
+}
+.flex-container2 {
+    display: flexbox;
+    background-color: black;
+    color: white;
+}
+
+.flex-container2 > p{
+    padding:20px;
+    margin: 10px;
+}
+
+.grid {
+    display: grid;
+    background-color: green;
+}
+
+.grid > div {
+    padding: 20px;
+    margin: 10px;
+}
