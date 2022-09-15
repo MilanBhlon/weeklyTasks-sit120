@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body style="padding: 50px">
+    <style>
+      .slot-component {
+        background-color: black;
+        padding: 10px;
+        text-align: center;
+        color: red;
+      }
+    </style>
+    <div id="app" class="slot-component">
+      {{message}}
+      <component-slot>
+        If you want additional text use slot tag!
+        <template v-slot:header> This is my header slot! </template>
+        <template v-slot:footer> This is my footer slot! </template>
+      </component-slot>
+    </div>
+  </body>
+  <script type="text/x-template" id="template1">
+    <div>
+      <h1>{{message1}}</h1>
+      <slot></slot>
+      <header>
+        <slot name="header"></slot>
+      </header>
+      <footer>
+        <slot name="footer"></slot>
+      </footer>
+    </div>
+  </script>
+
+  <script>
+    Vue.component("component-slot", {
+      data() {
+        return {
+          message1: "hello from slot component!",
+        };
+      },
+      template: "#template1",
+    });
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message: "",
+      },
+    });
+  </script>
+</html>

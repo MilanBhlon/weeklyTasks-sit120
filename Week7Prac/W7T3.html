@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W7T3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body style="padding: 10px">
+    <style>
+      .component-a {
+        background-color: aquamarine;
+        padding-top: 4em;
+        text-align: center;
+        height: 100px;
+      }
+      .component-b {
+        background-color: gray;
+        padding-top: 4em;
+        text-align: center;
+        height: 100px;
+      }
+    </style>
+    <div id="app">
+      {{message}}
+      <component-a inline-template @changeparentcount="increaseCount">
+        <div class="component-a">
+          {{messageFromComponentA}}
+          <br />
+          <button @click="increaseCount">
+            Change the root value without custom event
+          </button>
+          <br />
+          <button @click="$emit('changeparentcount')">
+            Change the root value with custom event
+          </button>
+        </div>
+      </component-a>
+      <component-b inline-template>
+        <div class="component-b">{{messageFromComponentB}}</div>
+      </component-b>
+      <div
+        style="
+          text-align: center;
+          background-color: brown;
+          padding: 10px;
+          color: white;
+        "
+      >
+        {{count}}
+      </div>
+    </div>
+    <script>
+      Vue.component("component-a", {
+        data() {
+          return {
+            messageFromComponentA: "Hello from component A!",
+          };
+        },
+      });
+      Vue.component("component-b", {
+        data() {
+          return {
+            messageFromComponentB: "Hello from component B!",
+          };
+        },
+      });
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Custom Events!",
+          count: 0,
+        },
+        methods: {
+          increaseCount() {
+            this.count += 1;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
